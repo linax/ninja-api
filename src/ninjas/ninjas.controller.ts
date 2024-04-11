@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, 
 import { CreateNinjaDto } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
 import { NinjasService } from './ninjas.service';
-import { BeltGuard } from 'src/belt/belt.guard';
+//import { BeltGuard } from 'src/belt/belt.guard';
 
 @Controller('ninjas')
 export class NinjasController {
@@ -29,7 +29,7 @@ export class NinjasController {
 
 
     @Post()
-    @UseGuards(BeltGuard)
+    //@UseGuards(BeltGuard)
     createNinja(@Body(new ValidationPipe) createNinjaDto: CreateNinjaDto){
         return this.ninjasService.createNinja(createNinjaDto);
     }
